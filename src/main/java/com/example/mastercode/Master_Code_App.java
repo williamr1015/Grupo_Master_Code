@@ -1,48 +1,26 @@
 package com.example.mastercode;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.time.LocalDate;
+
 @SpringBootApplication
 public class Master_Code_App {
-
 	public static void main(String[] args) {
 		SpringApplication.run(Master_Code_App.class, args);
-		Transactions t = new Transactions(1, 100, "Ingreso", "Empresa 1", "2020-01-01", "2020-01-01");
-		System.out.println(t.getId());
-		System.out.println(t.getAmount());
-		System.out.println(t.getConcept());
-		System.out.println(t.getEnterprise());
-		System.out.println(t.getCreated_at());
-		System.out.println(t.getUpdated_at());
 
-		Transactions t2 = new Transactions(2, 200, "Ingreso", "Empresa 2", "2020-01-01", "2020-01-01");
-		System.out.println(t2.getId());
-		System.out.println(t2.getAmount());
-		System.out.println(t2.getConcept());
-		System.out.println(t2.getEnterprise());
-		System.out.println(t2.getCreated_at());
-		System.out.println(t2.getUpdated_at());
+		Rol administrador = new Rol("Administrador", 1);
 
-		Transactions t3 = new Transactions(3, 50, "Retiro", "Empresa 3", "2020-01-01", "2020-01-01");
-		System.out.println(t3.getId());
-		System.out.println(t3.getAmount());
-		System.out.println(t3.getConcept());
-		System.out.println(t3.getEnterprise());
-		System.out.println(t3.getCreated_at());
-		System.out.println(t3.getUpdated_at());
-		
-		EmpleadoMC e = new EmpleadoMC(1, "Juan", "Perez", "juanp@gmail.com", "admin", "profile", "enterprise", 30, "2020-01-01", "2020-01-01");
-		System.out.println(e.getId());
-		System.out.println(e.getNombre());
-		System.out.println(e.getApellido());
-		System.out.println(e.getEmail());
-		System.out.println(e.getRole());
-		System.out.println(e.getProfile());
-		System.out.println(e.getEnterprise());
-		System.out.println(e.getEdad());
-		System.out.println(e.getCreated_at());
-		System.out.println(e.getUpdated_at());
+		Rol operativo = new Rol("Operativo", 2);
+
+		Perfil perfil1 = new Perfil(1, null,"1111111", LocalDate.of(2022, 8, 26), LocalDate.of(2022, 8, 26));
+
+		Transaccion transaccion1 = new Transaccion(1, "venta", 111.1,null, LocalDate.of(2022, 8, 26), LocalDate.of(2022, 8, 26));
+
+		Empresa empresa1 = new Empresa(1,"empresa_1", "1-1-1", 1111111, "carreara_1",null,transaccion1);
+
+		Empleado empleado1 = new Empleado(1, "empleado_1@", perfil1, administrador, empresa1, transaccion1, LocalDate.of(2022, 8, 26), LocalDate.of(2022, 8, 26));
+
+		System.out.println(empleado1);
 	}
-
 }
