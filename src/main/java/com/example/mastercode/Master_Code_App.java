@@ -34,13 +34,13 @@ public class Master_Code_App {
 		
 		EmpleadoMC e = new EmpleadoMC(1, "Juan", "Perez", "juanp@gmail.com", "admin", "profile", "enterprise", 30, "2020-01-01", "2020-01-01");
 		System.out.println(e.getId());
-		System.out.println(e.getName());
-		System.out.println(e.getLast_name());
+		System.out.println(e.getNombre());
+		System.out.println(e.getApellido());
 		System.out.println(e.getEmail());
 		System.out.println(e.getRole());
 		System.out.println(e.getProfile());
 		System.out.println(e.getEnterprise());
-		System.out.println(e.getAge());
+		System.out.println(e.getEdad());
 		System.out.println(e.getCreated_at());
 		System.out.println(e.getUpdated_at());
 	}

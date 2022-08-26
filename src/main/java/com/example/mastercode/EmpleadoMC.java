@@ -1,4 +1,4 @@
-package com.master_code.Master_Code;
+package com.example.mastercode;
 
 public class EmpleadoMC {
 
