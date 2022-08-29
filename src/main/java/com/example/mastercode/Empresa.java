@@ -1,11 +1,13 @@
-public class empresa {
+package com.example.mastercode;
+
+public class Empresa {
 
     private String name;
     private String document;
     private String phone;
     private String address;
 
-    public empresa(String name, String document, String phone, String address) {
+    public Empresa(String name, String document, String phone, String address) {
         this.name = name;
         this.document = document;
         this.phone = phone;
