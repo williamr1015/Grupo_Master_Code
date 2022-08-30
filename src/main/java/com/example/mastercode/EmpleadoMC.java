@@ -1,5 +1,7 @@
 package com.example.mastercode;
 
+import java.time.LocalDate;
+
 public class EmpleadoMC {
 
         private int Id;
@@ -10,10 +12,10 @@ public class EmpleadoMC {
         private String profile;
         private String enterprise;
         private int edad;
-        private String created_at;
-        private String updated_at;
+        private LocalDate created_at;
+        private LocalDate updated_at;
 
-    public EmpleadoMC(int id, String nombre, String apellido, String email, String role, String profile, String enterprise, int edad, String created_at, String updated_at) {
+    public EmpleadoMC(int id, String nombre, String apellido, String email, String role, String profile, String enterprise, int edad, LocalDate created_at, LocalDate updated_at) {
         Id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -90,21 +92,35 @@ public class EmpleadoMC {
         this.edad = edad;
     }
 
-    public String getCreated_at() {
+    public LocalDate getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(String created_at) {
+    public void setCreated_at(LocalDate created_at) {
         this.created_at = created_at;
     }
 
-    public String getUpdated_at() {
+    public LocalDate getUpdated_at() {
         return updated_at;
     }
 
-    public void setUpdated_at(String updated_at) {
+    public void setUpdated_at(LocalDate updated_at) {
         this.updated_at = updated_at;
     }
-
+    @Override
+    public String toString() {
+        return "EmpleadoMC{" +
+                "Id=" + Id +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", email='" + email + '\'' +
+                ", role='" + role + '\'' +
+                ", profile='" + profile + '\'' +
+                ", enterprise='" + enterprise + '\'' +
+                ", edad=" + edad +
+                ", created_at=" + created_at +
+                ", updated_at=" + updated_at +
+                '}';
+    }
 }
         

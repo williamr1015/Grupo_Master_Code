@@ -1,19 +1,21 @@
 package com.example.mastercode;
 
+import java.time.LocalDate;
+
 public class Transactions {
     private int id; // id de la cuenta
     private int amount; // cantidad de dinero
     private String concept; // ingreso o retiro
-    private String enterprise; //empresa a la que pertenece el usuario
-    private String created_at;  // Fecha de creación de la transacción
-    private String updated_at;  // Fecha de actualización de la transacción
+    private String Empresa; //empresa a la que pertenece el usuario
+    private LocalDate created_at;  // Fecha de creación de la transacción
+    private LocalDate updated_at;  // Fecha de actualización de la transacción
 
     //Constructor
-    public Transactions(int id, int amount, String concept, String enterprise, String created_at, String updated_at) {
+    public Transactions(int id, int amount, String concept, String Empresa, LocalDate created_at, LocalDate updated_at) {
         this.id = id;
         this.amount = amount;
         this.concept = concept;
-        this.enterprise = enterprise;
+        this.Empresa = Empresa;
         this.created_at = created_at;
         this.updated_at = updated_at;
     }
@@ -42,32 +44,42 @@ public class Transactions {
         this.concept = concept;
     }
 
-    public String getEnterprise() {
-        return enterprise;
+    public String getEmpresa() {
+        return Empresa;
     }
 
-    public void setEnterprise(String enterprise) {
-        this.enterprise = enterprise;
+    public void setEmpresa(String Empresa) {
+        this.Empresa = Empresa;
     }
 
-    public String getCreated_at() {
+    public LocalDate getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(String created_at) {
+    public void setCreated_at(LocalDate created_at) {
         this.created_at = created_at;
     }
 
-    public String getUpdated_at() {
+    public LocalDate getUpdated_at() {
         return updated_at;
     }
 
-    public void setUpdated_at(String updated_at) {
+    public void setUpdated_at(LocalDate updated_at) {
         this.updated_at = updated_at;
     }
 
 
-
+    @Override
+    public String toString() {
+        return "Transactions{" +
+                "id=" + id +
+                ", amount=" + amount +
+                ", concept='" + concept + '\'' +
+                ", Empresa='" + Empresa + '\'' +
+                ", created_at=" + created_at +
+                ", updated_at=" + updated_at +
+                '}';
+    }
 
 
 
