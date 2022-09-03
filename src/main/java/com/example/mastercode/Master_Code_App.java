@@ -2,6 +2,7 @@ package com.example.mastercode;
 
 import java.time.LocalDate;
 
+import com.example.mastercode.entities.Empresa;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -20,9 +21,6 @@ public class Master_Code_App {
 		EmpleadoMC e2 = new EmpleadoMC(2, "Pedro", "Perez", "pedro.p@gmail.com", "Administrador", "Perfil2", "Empresa2", 30, LocalDate.now(), LocalDate.now());
 		System.out.println(e.toString());
 		System.out.println(e2.toString());
-
-		Empresa em = new Empresa("colanta", "1000020033", "32123020020", "Calle falsa 123");
-		System.out.println(em.toString());
 
 	}
 
