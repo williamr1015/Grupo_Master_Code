@@ -5,11 +5,13 @@ import com.example.mastercode.services.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
-@RequestMapping("employee")
+
 @RestController
+@CrossOrigin(origins = "*")
+@RequestMapping("employee")
 public class EmployeeController {
-
 
     private final EmployeeService employeeService;
 
@@ -18,28 +20,28 @@ public class EmployeeController {
     }
 
     @GetMapping()
-    public List<Employee> getEmployee() {
-        return this.employeeService.getEmployee();
+    public List<Employee> getEmployeeList() throws Exception {
+        return employeeService.findAll();
     }
 
     @PostMapping()
-    public Employee createEmployee(@RequestBody Employee request) {
-        return employeeService.createEmployee(request);
+    public Employee createEmployee(@RequestBody Employee request) throws Exception {
+        return employeeService.create(request);
     }
 
     @GetMapping("/{id}")
-    public List<Employee> getEmployeeId() {
-        return this.employeeService.getEmployee();
+    public Optional<Employee> getEmployeeId(@PathVariable Long id) throws Exception {
+        return Optional.ofNullable(employeeService.findById(id));
     }
 
     @PatchMapping("/{id}")
-    public Employee modifyEmployee(@PathVariable Long id, @RequestBody Employee employee) {
-        return employeeService.modifyEmployee(id, employee);
+    public Employee modifyEmployee(@PathVariable Long id, @RequestBody Employee employee) throws Exception {
+        return employeeService.update(id, employee);
     }
 
     @DeleteMapping("/{id}")
-    public String deleteEmployee(@PathVariable Long id) {
-        return employeeService.deleteEmployee(id);
+    public boolean deleteEmployee(@PathVariable Long id) throws Exception {
+        return employeeService.delete(id);
     }
 /*
         @PostMapping : Crear un recurso nuevo
