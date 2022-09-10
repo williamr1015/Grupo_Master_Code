@@ -2,6 +2,8 @@ package com.example.mastercode;
 
 import java.time.LocalDate;
 
+import com.example.mastercode.entities.EmpleadoMC;
+
 public class Profile {
     private int id;
     private EmpleadoMC empleado;

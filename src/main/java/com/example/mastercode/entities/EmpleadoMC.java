@@ -1,4 +1,4 @@
-package com.example.mastercode;
+package com.example.mastercode.entities;
 
 import java.time.LocalDate;
 

@@ -2,7 +2,10 @@ package com.example.mastercode;
 
 import java.time.LocalDate;
 
-import com.example.mastercode.entities.Empresa;
+import com.example.mastercode.entities.EmpleadoMC;
+// import com.example.mastercode.entities.Empresa;
+import com.example.mastercode.entities.Transactions;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
